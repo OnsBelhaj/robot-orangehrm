@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.0 on win32)" generated="2026-01-22T11:39:14.031299" rpa="false" schemaversion="5">
+<suite id="s1" name="Leave Request" source="C:\Users\OnsBelhaj\Documents\robot-tests\leave_request.robot">
+<test id="s1-t1" name="Soumettre une demande de congé valide" line="5">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-01-22T11:39:14.406840" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\OnsBelhaj\\Documents\\robot-tests\\browser\\traces\\temp\\4b428ceb-54f9-4879-abb3-b78619b63393"}</msg>
+<msg time="2026-01-22T11:39:14.456516" level="INFO">Starting Browser process C:\Users\OnsBelhaj\AppData\Roaming\Python\Python314\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60896</msg>
+<msg time="2026-01-22T11:39:16.063913" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\OnsBelhaj\\Documents\\robot-tests\\browser\\traces\\temp\\4b428ceb-54f9-4879-abb3-b78619b63393"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-01-22T11:39:14.405878" elapsed="1.658479"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-01-22T11:39:16.080776" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2026-01-22T11:39:16.160680" level="INFO">Successfully created context. </msg>
+<msg time="2026-01-22T11:39:16.160885" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-01-22T11:39:16.077271" elapsed="0.083835"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-01-22T11:39:20.409806" level="INFO">Successfully initialized new page object and opened url: https://opensource-demo.orangehrmlive.com/</msg>
+<arg>https://opensource-demo.orangehrmlive.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-01-22T11:39:16.182306" elapsed="4.228045"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-01-22T11:39:20.414900" level="INFO">Fills the text 'Admin' in the given field.</msg>
+<arg>input[name="username"]</arg>
+<arg>Admin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-01-22T11:39:20.411720" elapsed="3.047650"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-01-22T11:39:23.462967" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<arg>input[name="password"]</arg>
+<arg>admin123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-01-22T11:39:23.460629" elapsed="0.044092"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-01-22T11:39:23.507504" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>button[type="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-01-22T11:39:23.505851" elapsed="7.888174"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-01-22T11:39:36.398902" level="INFO">Waited for Element with selector css=nav.oxd-navbar-nav at state visible</msg>
+<arg>css=nav.oxd-navbar-nav</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-01-22T11:39:31.395057" elapsed="5.004100"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-01-22T11:39:36.401689" level="INFO">Clicks the element 'css=span.oxd-main-menu-item--name &gt;&gt; text=Leave'.</msg>
+<arg>css=span.oxd-main-menu-item--name &gt;&gt; text=Leave</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-01-22T11:39:36.400018" elapsed="5.275702"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-01-22T11:39:44.110094" level="INFO">Waited for Element with selector text=Apply at state visible</msg>
+<arg>text=Apply</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-01-22T11:39:41.676906" elapsed="2.433604"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-01-22T11:39:44.131073" level="INFO">Waited for Element with selector css=button.oxd-button--secondary at state visible</msg>
+<arg>css=button.oxd-button--secondary</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-01-22T11:39:44.112900" elapsed="0.018828"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-01-22T11:39:44.135155" level="INFO">Clicks the element 'text=Apply'.</msg>
+<arg>text=Apply</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-01-22T11:39:44.133013" elapsed="2.827331"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-01-22T11:39:49.904877" level="INFO">Waited for Element with selector css=div.oxd-select-text at state visible</msg>
+<arg>css=div.oxd-select-text</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-01-22T11:39:46.961468" elapsed="2.943793"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-01-22T11:39:49.906981" level="INFO">Clicks the element 'css=div.oxd-select-text'.</msg>
+<msg time="2026-01-22T11:40:00.486636" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-22T11:40:00.487248" level="INFO">See also file:///C:/Users/OnsBelhaj/Documents/robot-tests/playwright-log.txt for additional details.</msg>
+<msg time="2026-01-22T11:40:00.489627" level="FAIL">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('div.oxd-select-text')
+    - locator resolved to &lt;div data-v-67d2aedf="" data-v-13cf171c="" class="oxd-select-text oxd-select-text--active"&gt;…&lt;/div&gt;
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    4 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+  - element was detached from the DOM, retrying
+</msg>
+<arg>css=div.oxd-select-text</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="FAIL" start="2026-01-22T11:39:49.906044" elapsed="10.602684">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('div.oxd-select-text')
+    - locator resolved to &lt;div data-v-67d2aedf="" data-v-13cf171c="" class="oxd-select-text oxd-select-text--active"&gt;…&lt;/div&gt;
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    4 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+  - element was detached from the DOM, retrying
+</status>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>text=CAN - Vacation</arg>
+<arg>visible</arg>
+<arg>timeout=15s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2026-01-22T11:40:00.510033" elapsed="0.000643"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=CAN - Vacation</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-01-22T11:40:00.511525" elapsed="0.000398"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>input[placeholder="yyyy-mm-dd"]</arg>
+<arg>2026-02-10</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-01-22T11:40:00.512639" elapsed="0.000354"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>input[placeholder="yyyy-mm-dd"]</arg>
+<arg>2026-02-12</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-01-22T11:40:00.513643" elapsed="0.000331"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>button[type="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-01-22T11:40:00.514993" elapsed="0.000373"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-22T11:40:00.516002" elapsed="0.000415"/>
+</kw>
+<msg time="2026-01-22T11:40:00.570290" level="INFO">Switching context to context=3a92f4bc-ab88-4dc0-a7e9-20e960a5c0c2 in CURRENT</msg>
+<msg time="2026-01-22T11:40:00.624697" level="INFO">Successfully changed active context: context=3a92f4bc-ab88-4dc0-a7e9-20e960a5c0c2</msg>
+<msg time="2026-01-22T11:40:00.702994" level="INFO">Successfully closed Context</msg>
+<status status="FAIL" start="2026-01-22T11:39:14.404443" elapsed="46.112928">TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('div.oxd-select-text')
+    - locator resolved to &lt;div data-v-67d2aedf="" data-v-13cf171c="" class="oxd-select-text oxd-select-text--active"&gt;…&lt;/div&gt;
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    4 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - &lt;div data-v-d5bfe35b="" class="oxd-form-loader"&gt;…&lt;/div&gt; intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+  - element was detached from the DOM, retrying
+</status>
+</test>
+<status status="FAIL" start="2026-01-22T11:39:14.033636" elapsed="46.680105"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Leave Request" id="s1" pass="0" fail="1" skip="0">Leave Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
