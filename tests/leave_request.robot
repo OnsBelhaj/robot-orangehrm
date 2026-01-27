@@ -3,7 +3,7 @@ Library    Browser
 
 *** Test Cases ***
 Soumettre une demande de congé valide
-    New Browser    chromium    headless=False
+    New Browser    chromium    headless=True
     New Context
     New Page    https://opensource-demo.orangehrmlive.com/
 
@@ -31,3 +31,4 @@ Soumettre une demande de congé valide
 
 
     Close Browser
+
