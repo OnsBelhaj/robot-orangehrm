@@ -11,8 +11,9 @@ Soumettre une demande de congé valide
     Fill Text    input[name="password"]    admin123
     Click        button[type="submit"]
 
-    Wait For Elements State    css=nav.oxd-navbar-nav    visible    timeout=15s
-    Click        css=span.oxd-main-menu-item--name >> text=Leave
+    Wait For Elements State    css=span.oxd-main-menu-item--name >> text=Leave    visible    timeout=20s
+    Click                     css=span.oxd-main-menu-item--name >> text=Leave
+
 
 
     Wait For Elements State    text=Apply    visible    timeout=15s
