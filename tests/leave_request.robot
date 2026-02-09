@@ -21,7 +21,9 @@ Soumettre une demande de congé valide
     Click        text=Apply
 
     Wait For Elements State    css=div.oxd-select-text    visible    timeout=15s
-    Click        css=div.oxd-select-text
+    Wait For Elements State    css=div.oxd-select-text    stable     timeout=15s
+    Click                      css=div.oxd-select-text
+
 
     Wait For Elements State    text=CAN - Vacation    visible    timeout=15s
     Click        text=CAN - Vacation
