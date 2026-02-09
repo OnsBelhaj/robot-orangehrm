@@ -1,0 +1,25 @@
+# --- Robot Framework generated files ---
+log.html
+report.html
+output.xml
+
+# Results directories (si tu en ajoutes plus tard)
+results/
+output/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+
+# --- Playwright / Browser ---
+playwright-log.txt
+
+# --- OS / Editor ---
+.vscode/
+.DS_Store
+Thumbs.db
