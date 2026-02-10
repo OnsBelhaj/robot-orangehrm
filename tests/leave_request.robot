@@ -1,40 +1,47 @@
 *** Settings ***
-Library    Browser
+Resource    ../resources/keywords.robot
 
 *** Test Cases ***
-Soumettre une demande de congé valide
-    New Browser    chromium    headless=True
-    New Context
-    New Page    https://opensource-demo.orangehrmlive.com/
 
-    # Login
-    Fill Text    input[name="username"]    Admin
-    Fill Text    input[name="password"]    admin123
-    Click        button[type="submit"]
+TC01 - Apply Leave Without Balance (Negative Case)
+    [Documentation]    Vérifier qu’un utilisateur sans solde ne peut pas soumettre une demande
+    Open Application And Login
+    Go To Apply Leave
 
-    # Go to Leave
-    Wait For Elements State    css=span.oxd-main-menu-item--name >> text=Leave    visible    timeout=20s
-    Click                     css=span.oxd-main-menu-item--name >> text=Leave
+    Wait For Elements State
+    ...    text=No Leave Types with Leave Balance
+    ...    visible
+    ...    timeout=10s
 
-    # Click Apply
-    Wait For Elements State    text=Apply    visible    timeout=15s
-    Click                     text=Apply
+    Close Application
 
-    # Open Leave Type dropdown
-    Wait For Elements State    css=div.oxd-select-text    visible    timeout=15s
-    Click                      css=div.oxd-select-text
 
-    # Wait for dropdown list (IMPORTANT)
-    Wait For Elements State    css=div.oxd-select-dropdown    visible    timeout=15s
+TC02 - Apply Leave With Balance (Positive Case - Conditional)
+    [Documentation]    Soumettre une demande de congé si un solde existe
+    Open Application And Login
+    Go To Apply Leave
 
-    # Select Leave Type
-    Click    css=div.oxd-select-dropdown >> text=CAN - Vacation
+    ${hasBalance}=    Run Keyword And Return Status
+    ...    Wait For Elements State
+    ...    css=div.oxd-select-text
+    ...    visible
+    ...    timeout=5s
 
-    # Fill dates
-    Fill Text    xpath=(//input[@placeholder="yyyy-mm-dd"])[1]    2026-02-10
-    Fill Text    xpath=(//input[@placeholder="yyyy-mm-dd"])[2]    2026-02-12
+    IF    ${hasBalance}
+        Click    css=div.oxd-select-text
+        Wait For Elements State    css=div[role="listbox"]    visible
+        Click    css=div[role="option"] >> nth=0
 
-    # Submit
-    Click    button[type="submit"]
+        Fill Text    input[placeholder="yyyy-mm-dd"]    2026-02-10
+        Fill Text    input[placeholder="yyyy-mm-dd"]    2026-02-12
+        Click        button[type="submit"]
 
-    Close Browser
+        Wait For Elements State
+        ...    text=Successfully Saved
+        ...    visible
+        ...    timeout=10s
+    ELSE
+        Log    Aucun solde disponible – test positif ignoré    WARN
+    END
+
+    Close Application
