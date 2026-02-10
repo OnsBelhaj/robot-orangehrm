@@ -1,5 +1,6 @@
 *** Settings ***
-Resource    ../resources/keywords.robot
+Library    Browser
+Resource   keywords/authentication.robot
 
 *** Test Cases ***
 
