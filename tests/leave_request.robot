@@ -1,6 +1,6 @@
 *** Settings ***
 Library    Browser
-Resource   keywords/authentication.robot
+Resource   ressources/authentication.robot
 
 *** Test Cases ***
 
